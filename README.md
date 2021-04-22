@@ -1,5 +1,11 @@
 # SafeAndSound
 
+Kelompok 3
+
+Rangga Aulia Rahman	(20/456849/TK/50673)
+
+Rasyid Baskoro Agung	(20/456850/TK/50674)
+
 Pada project ini dilakukan implementasi class. Namun fungsionalitas method dalam class-class ini belum dilakukan, sehingga hanya
 ada gambaran secara garis besar apa yang akan dilakukan method dalam class-class ini.
 

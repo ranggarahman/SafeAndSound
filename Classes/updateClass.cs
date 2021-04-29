@@ -9,10 +9,10 @@ namespace SafeAndSound.Classes
 {
     class updateClass : detailClass
     {
-        public bool Update(detailClass c)
+        protected bool Update(detailClass c)
         {
             bool isSuccess = false;
-            SqlConnection conn = new SqlConnection(myconnstrng);
+            SqlConnection conn = new SqlConnection(Myconnstrng);
             try
             {
                 //Disini dilakukan beberapa hal :

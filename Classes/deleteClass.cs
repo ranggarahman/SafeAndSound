@@ -9,15 +9,15 @@ namespace SafeAndSound.Classes
 {
     class deleteClass : detailClass
     {
-        public bool Delete(detailClass c)
+        protected bool Delete(detailClass c)
         {
             bool isSuccess = false;
-            SqlConnection conn = new SqlConnection(myconnstrng);
+            SqlConnection conn = new SqlConnection(Myconnstrng);
             try
             {
                 /*
                  * Disini dilakukan beberapa hal
-                 * 1. Membuat SQL untuk deletion data
+                 * 1. Membuat SQL untuk deletion dataxdwadwa
                  * 2. Membuat command SQL dan membuka connection
                  * 3. Pengecekan kondisi apakah query berhasil dijalankan, jika iya maka nilai rows > 0
                  */

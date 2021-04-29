@@ -9,10 +9,10 @@ namespace SafeAndSound.Classes
 {
     class insertClass : detailClass
     {
-        public bool Insert (detailClass c)
+        protected bool Insert (detailClass c)
         {
             bool isSuccess = false;
-            SqlConnection conn = new SqlConnection(myconnstrng);
+            SqlConnection conn = new SqlConnection(Myconnstrng);
             try
             {
                 /*Disini akan dilakukan beberapa hal : 

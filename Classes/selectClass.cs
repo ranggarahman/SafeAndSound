@@ -11,12 +11,12 @@ namespace SafeAndSound.Classes
     class selectClass : detailClass
     {
         //Memilih (selecting) data dari database
-        public DataTable Select()
+        protected DataTable Select()
         {
             //membuat (establishing) koneksi database
             //Ini contoh class yang sudah sedikit ter-implementasi
             //Implementasi class lain akan menyusul
-            SqlConnection conn = new SqlConnection(myconnstrng);
+            SqlConnection conn = new SqlConnection(Myconnstrng);
             DataTable dt = new DataTable();
             try
             {

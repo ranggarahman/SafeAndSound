@@ -15,7 +15,8 @@ namespace SafeAndSound.Classes
         public string ContactNumber { get; set; }
         public string Address { get; set; }
         public string Gender { get; set; }
+        public static string Myconnstrng { get => myconnstrng; set => myconnstrng = value; }
 
-        public static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        private static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
     }
 }

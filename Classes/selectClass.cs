@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,9 +14,6 @@ namespace SafeAndSound.Classes
         //Memilih (selecting) data dari database
         public DataTable Select()
         {
-            //membuat (establishing) koneksi database
-            //Ini contoh class yang sudah sedikit ter-implementasi
-            //Implementasi class lain akan menyusul
             SqlConnection conn = new SqlConnection(myconnstrng);
             DataTable dt = new DataTable();
             try

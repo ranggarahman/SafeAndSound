@@ -31,6 +31,6 @@ namespace SafeAndSound.Classes
                 ConfigurationConst.Configs = ConfigurationManager.OpenExeConfiguration(ExecAppPath).AppSettings.Settings;
             }
         }
-        public static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        public string myconnstrng = ConfigurationManager.ConnectionStrings["connstrg"].ConnectionString;
     }
 }

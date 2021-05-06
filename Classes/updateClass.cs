@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace SafeAndSound.Classes
     class updateClass : detailClass
     {
         public bool Update(detailClass c)
-        {
+        {            
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myconnstrng);
             try

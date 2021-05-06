@@ -15,8 +15,22 @@ namespace SafeAndSound.Classes
         public string ContactNumber { get; set; }
         public string Address { get; set; }
         public string Gender { get; set; }
-        public static string Myconnstrng { get => myconnstrng; set => myconnstrng = value; }
 
-        private static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        public static class ConfigurationConst
+        {
+            public static KeyValueConfigurationCollection Configs;
+        }
+        internal class ApplicationConfigurationReader
+        {
+            public void Read()
+            {
+                // read assembly
+                var ExecAppPath = this.GetType().Assembly.Location;
+
+                // Get all app settings  in config file
+                ConfigurationConst.Configs = ConfigurationManager.OpenExeConfiguration(ExecAppPath).AppSettings.Settings;
+            }
+        }
+        public static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
     }
 }

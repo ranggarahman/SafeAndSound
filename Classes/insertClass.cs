@@ -9,21 +9,34 @@ namespace SafeAndSound.Classes
 {
     class insertClass : detailClass
     {
-        protected bool Insert (detailClass c)
+        public bool Insert (detailClass c)
         {
             bool isSuccess = false;
-            SqlConnection conn = new SqlConnection(Myconnstrng);
+            SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                /*Disini akan dilakukan beberapa hal : 
-                 1. Membuat SQL Query untuk insertion data
-                 2. Membuat parameter-parameter yang perlu untuk memasukkan data tersebut
-                 3. Membuka connection, e.g conn.Open();
-                 4. Pengecekan kondisi apakah query berhasil dijalankan, jika iya maka nilai rows > 0
-                */
+                //Membuat query SQL
+                string sql = "INSERT INTO tbl_contact (FirstName, LastName, ContactNumber, Address, Gender) VALUES (@FirstName, @LastName, @ContactNumber, @Address, @Gender)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@Address", c.Address);
+                cmd.Parameters.AddWithValue("@ContactNumber", c.ContactNumber);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if(rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }

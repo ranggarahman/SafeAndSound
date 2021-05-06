@@ -9,18 +9,28 @@ namespace SafeAndSound.Classes
 {
     class deleteClass : detailClass
     {
-        protected bool Delete(detailClass c)
+        public bool Delete(detailClass c)
         {
             bool isSuccess = false;
-            SqlConnection conn = new SqlConnection(Myconnstrng);
+            SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                /*
-                 * Disini dilakukan beberapa hal
-                 * 1. Membuat SQL untuk deletion dataxdwadwa
-                 * 2. Membuat command SQL dan membuka connection
-                 * 3. Pengecekan kondisi apakah query berhasil dijalankan, jika iya maka nilai rows > 0
-                 */
+                string sql = "DELETE FROM tbl_contact WHERE ContactID=@ContactID";
+
+                //Membuat SQL Command
+                SqlCommand cmd = new(sql, conn);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
             }
             catch (Exception ex)
             {
@@ -28,7 +38,7 @@ namespace SafeAndSound.Classes
             }
             finally
             {
-
+                conn.Close();
             }
             return isSuccess;
         }

@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace SafeAndSound
             InitializeComponent();
         }
         detailClass c = new();
+        public string myconnstrng = ConfigurationManager.ConnectionStrings["connstrg"].ConnectionString;
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -47,9 +50,71 @@ namespace SafeAndSound
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            selectClass slc = new();
-            DataTable dt = slc.Select();
-            dgvContactList.DataSource = dt;
+            if (!CheckDatabaseExist())
+            {
+                GenerateDatabase();
+                selectClass slc = new();
+                DataTable dt = slc.Select();
+                dgvContactList.DataSource = dt;
+            }
+        }
+
+        private bool CheckDatabaseExist()
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void GenerateDatabase()
+        {
+            List<string> cmds = new List<string>();
+            //Membaca Script file dari folder aplikasi
+            if(File.Exists(Application.StartupPath + "\\dbScript.sql"))
+            {
+                TextReader tr = new StreamReader(Application.StartupPath + "\\dbScript.sql");
+                string line = "";
+                string cmd = "";
+                while((line = tr.ReadLine()) != null)
+                {
+                    if(line.Trim().ToUpper() == "GO")
+                    {
+                        cmds.Add(cmd);
+                        cmd = "";
+                    }
+                    else
+                    {
+                        cmd += line + "\r\n";
+                    }
+                }
+                if(cmd.Length > 0)
+                {
+                    cmds.Add(cmd);
+                    cmd = "";
+                }
+                tr.Close();
+            }
+            if(cmds.Count > 0)
+            {
+                SqlCommand command = new();
+                //SQL connection untuk master database
+                //Digunakan untuk generating database
+                command.Connection = new SqlConnection(myconnstrng);
+                command.CommandType = CommandType.Text;
+                command.Connection.Open();
+                for(int i = 0; i < cmds.Count; i++)
+                {
+                    command.CommandText = cmds[i];
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Clear()
@@ -114,7 +179,6 @@ namespace SafeAndSound
                 MessageBox.Show("Data gagal dihapus");
             }
         }
-        public string myconnstrng = ConfigurationManager.ConnectionStrings["connstrg"].ConnectionString;
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
             string keyword = txtboxSearch.Text;

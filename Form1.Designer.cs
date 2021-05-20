@@ -29,6 +29,7 @@ namespace SafeAndSound
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblContactID = new System.Windows.Forms.Label();
             this.txtboxContactID = new System.Windows.Forms.TextBox();
             this.txtboxContactNumber = new System.Windows.Forms.TextBox();
@@ -48,14 +49,16 @@ namespace SafeAndSound
             this.dgvContactList = new System.Windows.Forms.DataGridView();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtboxSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblContactID
             // 
             this.lblContactID.AutoSize = true;
             this.lblContactID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContactID.Location = new System.Drawing.Point(34, 60);
+            this.lblContactID.Location = new System.Drawing.Point(34, 82);
             this.lblContactID.Name = "lblContactID";
             this.lblContactID.Size = new System.Drawing.Size(86, 20);
             this.lblContactID.TabIndex = 0;
@@ -64,7 +67,7 @@ namespace SafeAndSound
             // txtboxContactID
             // 
             this.txtboxContactID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxContactID.Location = new System.Drawing.Point(183, 57);
+            this.txtboxContactID.Location = new System.Drawing.Point(183, 79);
             this.txtboxContactID.Name = "txtboxContactID";
             this.txtboxContactID.ReadOnly = true;
             this.txtboxContactID.Size = new System.Drawing.Size(186, 26);
@@ -73,7 +76,7 @@ namespace SafeAndSound
             // txtboxContactNumber
             // 
             this.txtboxContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxContactNumber.Location = new System.Drawing.Point(183, 212);
+            this.txtboxContactNumber.Location = new System.Drawing.Point(183, 234);
             this.txtboxContactNumber.Name = "txtboxContactNumber";
             this.txtboxContactNumber.Size = new System.Drawing.Size(186, 26);
             this.txtboxContactNumber.TabIndex = 3;
@@ -82,7 +85,7 @@ namespace SafeAndSound
             // 
             this.lblContactNumber.AutoSize = true;
             this.lblContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContactNumber.Location = new System.Drawing.Point(34, 218);
+            this.lblContactNumber.Location = new System.Drawing.Point(34, 240);
             this.lblContactNumber.Name = "lblContactNumber";
             this.lblContactNumber.Size = new System.Drawing.Size(125, 20);
             this.lblContactNumber.TabIndex = 2;
@@ -91,7 +94,7 @@ namespace SafeAndSound
             // txtboxLastName
             // 
             this.txtboxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxLastName.Location = new System.Drawing.Point(183, 161);
+            this.txtboxLastName.Location = new System.Drawing.Point(183, 183);
             this.txtboxLastName.Name = "txtboxLastName";
             this.txtboxLastName.Size = new System.Drawing.Size(186, 26);
             this.txtboxLastName.TabIndex = 5;
@@ -100,7 +103,7 @@ namespace SafeAndSound
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLastName.Location = new System.Drawing.Point(34, 167);
+            this.lblLastName.Location = new System.Drawing.Point(34, 189);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(86, 20);
             this.lblLastName.TabIndex = 4;
@@ -109,7 +112,7 @@ namespace SafeAndSound
             // txtboxFirstName
             // 
             this.txtboxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxFirstName.Location = new System.Drawing.Point(183, 108);
+            this.txtboxFirstName.Location = new System.Drawing.Point(183, 130);
             this.txtboxFirstName.Name = "txtboxFirstName";
             this.txtboxFirstName.Size = new System.Drawing.Size(186, 26);
             this.txtboxFirstName.TabIndex = 7;
@@ -118,7 +121,7 @@ namespace SafeAndSound
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFirstName.Location = new System.Drawing.Point(34, 111);
+            this.lblFirstName.Location = new System.Drawing.Point(34, 133);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(86, 20);
             this.lblFirstName.TabIndex = 6;
@@ -127,7 +130,7 @@ namespace SafeAndSound
             // txtboxAddress
             // 
             this.txtboxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxAddress.Location = new System.Drawing.Point(183, 258);
+            this.txtboxAddress.Location = new System.Drawing.Point(183, 280);
             this.txtboxAddress.Multiline = true;
             this.txtboxAddress.Name = "txtboxAddress";
             this.txtboxAddress.Size = new System.Drawing.Size(186, 87);
@@ -137,7 +140,7 @@ namespace SafeAndSound
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddress.Location = new System.Drawing.Point(34, 264);
+            this.lblAddress.Location = new System.Drawing.Point(34, 286);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(68, 20);
             this.lblAddress.TabIndex = 8;
@@ -150,7 +153,7 @@ namespace SafeAndSound
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(183, 380);
+            this.cmbGender.Location = new System.Drawing.Point(183, 402);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(186, 28);
             this.cmbGender.TabIndex = 10;
@@ -159,7 +162,7 @@ namespace SafeAndSound
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGender.Location = new System.Drawing.Point(34, 383);
+            this.lblGender.Location = new System.Drawing.Point(34, 405);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(63, 20);
             this.lblGender.TabIndex = 11;
@@ -170,7 +173,7 @@ namespace SafeAndSound
             this.btnAdd.BackColor = System.Drawing.Color.LimeGreen;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(125, 458);
+            this.btnAdd.Location = new System.Drawing.Point(125, 480);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(127, 47);
             this.btnAdd.TabIndex = 12;
@@ -183,7 +186,7 @@ namespace SafeAndSound
             this.btnUpdate.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(308, 458);
+            this.btnUpdate.Location = new System.Drawing.Point(308, 480);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(127, 47);
             this.btnUpdate.TabIndex = 13;
@@ -196,7 +199,7 @@ namespace SafeAndSound
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(482, 458);
+            this.btnDelete.Location = new System.Drawing.Point(482, 480);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(127, 47);
             this.btnDelete.TabIndex = 14;
@@ -209,7 +212,7 @@ namespace SafeAndSound
             this.btnClear.BackColor = System.Drawing.Color.Orange;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(662, 458);
+            this.btnClear.Location = new System.Drawing.Point(662, 480);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(127, 47);
             this.btnClear.TabIndex = 15;
@@ -219,7 +222,7 @@ namespace SafeAndSound
             // dgvContactList
             // 
             this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactList.Location = new System.Drawing.Point(421, 89);
+            this.dgvContactList.Location = new System.Drawing.Point(421, 111);
             this.dgvContactList.Name = "dgvContactList";
             this.dgvContactList.RowTemplate.Height = 25;
             this.dgvContactList.Size = new System.Drawing.Size(468, 318);
@@ -230,7 +233,7 @@ namespace SafeAndSound
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSearch.Location = new System.Drawing.Point(421, 57);
+            this.lblSearch.Location = new System.Drawing.Point(421, 79);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(60, 20);
             this.lblSearch.TabIndex = 17;
@@ -239,17 +242,28 @@ namespace SafeAndSound
             // txtboxSearch
             // 
             this.txtboxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxSearch.Location = new System.Drawing.Point(487, 54);
+            this.txtboxSearch.Location = new System.Drawing.Point(487, 76);
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(402, 26);
             this.txtboxSearch.TabIndex = 18;
             this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(397, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(114, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 539);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.dgvContactList);
@@ -273,6 +287,7 @@ namespace SafeAndSound
             this.Text = "Safe and Sound";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +314,7 @@ namespace SafeAndSound
         private System.Windows.Forms.DataGridView dgvContactList;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtboxSearch;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

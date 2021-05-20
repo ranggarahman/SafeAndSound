@@ -243,6 +243,7 @@ namespace SafeAndSound
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(402, 26);
             this.txtboxSearch.TabIndex = 18;
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
             // Form1
             // 
@@ -269,7 +270,7 @@ namespace SafeAndSound
             this.Controls.Add(this.txtboxContactID);
             this.Controls.Add(this.lblContactID);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Safe and Sound";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             this.ResumeLayout(false);

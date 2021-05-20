@@ -27,6 +27,7 @@ namespace SafeAndSound.Classes
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
+                //Jika query berhasil dijalankan maka jumlah baris akan lebih dari 1
                 if(rows > 0)
                 {
                     isSuccess = true;

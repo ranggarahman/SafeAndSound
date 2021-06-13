@@ -29,7 +29,6 @@ namespace SafeAndSound
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblContactID = new System.Windows.Forms.Label();
             this.txtboxContactID = new System.Windows.Forms.TextBox();
             this.txtboxContactNumber = new System.Windows.Forms.TextBox();
@@ -49,9 +48,8 @@ namespace SafeAndSound
             this.dgvContactList = new System.Windows.Forms.DataGridView();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtboxSearch = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblContactID
@@ -248,22 +246,23 @@ namespace SafeAndSound
             this.txtboxSearch.TabIndex = 18;
             this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
-            // pictureBox1
+            // label1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(397, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(34, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 29);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Safe and Sound";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(931, 539);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.dgvContactList);
@@ -283,11 +282,11 @@ namespace SafeAndSound
             this.Controls.Add(this.lblContactNumber);
             this.Controls.Add(this.txtboxContactID);
             this.Controls.Add(this.lblContactID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Safe and Sound";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +313,7 @@ namespace SafeAndSound
         private System.Windows.Forms.DataGridView dgvContactList;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtboxSearch;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
